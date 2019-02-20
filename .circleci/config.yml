@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.11
+
+    working_directory: /go/src/github.com/samsung-cnct/cma-operator
+    steps:
+      - checkout
+      - run: make -f build/Makefile container-build
+      - run: go test -cover ./...
