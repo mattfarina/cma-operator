@@ -23,7 +23,8 @@ func NewLayout() *Layout {
 
 func (l *Layout) GenerateSDSCluster(options cma.SDSClusterOptions) v1alpha1.SDSCluster {
 	cluster := cma.GenerateSDSCluster(options)
-	cluster.Spec.Layout = "poc"
+	// Commenting out the below line as it causes the code to no longer compile/test
+	//cluster.Spec.Layout = "poc"
 	return cluster
 }
 
